@@ -20,6 +20,8 @@ namespace Asr_V3 {
     const ASR_BUZZER = 0x09                 //蜂鸣器控制寄存器，写1开启，写0关闭
     const ASR_NUM_CLECK =0x0a               //录入词条数目校验
     const FIRMWARE_VERSION = 0x0b           //固件版本号
+    const ASR_BUSY = 0x0C                   //忙闲寄存器
+
     
     const DELAY  = 150;//I2C之间延时间隔ms
 
@@ -87,20 +89,21 @@ namespace Asr_V3 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Asr_Add_Words(value: number,str: string): void {
         let asr_txt = str;
-        let num = asr_txt.length + 2;
+        let date_length = asr_txt.length + 2;
+        let str_length = asr_txt.length;
+        
+        pins.i2cWriteNumber(I2C_ADDR,ASR_ADD_WORD_ADDR, NumberFormat.UInt8LE, false);//选择寄存器
+        pins.i2cWriteNumber(I2C_ADDR,date_length, NumberFormat.UInt8LE, false);//发送数据长度，计算方式词组号+词组字符串长度+0
+        pins.i2cWriteNumber(I2C_ADDR,value, NumberFormat.UInt8LE, false);//发送词组号
 
-        let buf = pins.createBuffer(num + 2);//新塘语音识别没有停止位对应的中断，所以用254当结束标志，但是之前用个0来代表串口的中断符号
-        buf[0] = ASR_ADD_WORD_ADDR;
-        buf[1] = value;
-        for(let i =2;i<num;i++)
+
+        for(let i =0;i<str_length;i++)
         {
-            buf[i] = asr_txt.charCodeAt(i-2);
+            pins.i2cWriteNumber(I2C_ADDR,asr_txt.charCodeAt(i), NumberFormat.UInt8LE, false);//发送词组字符
+            basic.pause(10);
         }
-        buf[num] = 0;
-        buf[num + 1] = 254;
+        pins.i2cWriteNumber(I2C_ADDR,0, NumberFormat.UInt8LE, false);//发送0作为结束符
 
-        pins.i2cWriteBuffer(I2C_ADDR, buf);
-        basic.pause(DELAY);
     }
 
     //% blockId=Asr_Asr_Clear_Buffer block="Asr_Clear_Buffer"
@@ -282,7 +285,8 @@ namespace Asr_V3 {
             basic.pause(50);
         }
 
-}
+       }
+
 
     //% blockId=Read_Firmware_Version block="Read_Firmware_Version"
     //% weight=90
@@ -299,6 +303,36 @@ namespace Asr_V3 {
         let result = pins.i2cReadNumber(I2C_ADDR,NumberFormat.UInt8LE, false);
         return result;
     }
+
+    //% blockId=Asr_Busy_Date block="Asr_Busy_Date"
+    //% weight=89
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Asr_Busy_Date(): number {
+
+        let buf = pins.createBuffer(1);
+        buf[0] = ASR_BUSY;       
+        pins.i2cWriteBuffer(I2C_ADDR, buf);
+        basic.pause(DELAY);  
+
+        let result = pins.i2cReadNumber(I2C_ADDR,NumberFormat.UInt8LE, false);
+        return result;
+    }
+
+    //% blockId=Wait_Asr_Busy block="Wait_Asr_Busy"
+    //% weight=88
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Wait_Asr_Busy(): void { 
+        
+        while(Asr_Busy() !=  0)
+        {
+            basic.pause(100);
+        }
+
+       }
 
  
 }

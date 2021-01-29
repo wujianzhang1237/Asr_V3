@@ -12,7 +12,9 @@
   "Asr_V3.Asr_NUM_Cleck|block": "模塊錄入詞組數",  
   "Asr_V3.Cleck_Asr_Num|block": "檢驗模塊錄入詞組數|詞組數為 %asr_num",  
   "Asr_V3.Read_Firmware_Version|block": "讀取固件版本",
-  
+  "Asr_V3.Asr_Busy_Date|block": "模塊忙閒值",
+  "Asr_V3.Wait_Asr_Busy|block": "等待模塊空閒", 
+ 
   "Asr_V3.Mode.cycle_mode|block": "循環模式",
   "Asr_V3.Mode.password_mode|block": "口令模式",
   "Asr_V3.Mode.key_mode|block": "按鍵模式",
