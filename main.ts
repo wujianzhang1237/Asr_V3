@@ -5,7 +5,7 @@ load dependency
 "Asr": "file:../pxt-Asr_V3"
 */
 
-//% color="#006400" weight=20 icon="\uf130"
+//% color="#3CB371" weight=20 icon="\uf130"
 namespace Asr_V3 {
     
     const I2C_ADDR = 0x0f                   //语音识别模块地址
@@ -243,7 +243,7 @@ namespace Asr_V3 {
     //% blockId=Asr_Asr_Result block="Asr_Result"
     //% weight=92
     //% blockGap=10
-    //% color="#006400"
+    //% color="#3CB371"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Asr_Result(): number {
 
@@ -259,7 +259,7 @@ namespace Asr_V3 {
     //% blockId=Asr_Asr_NUM_Cleck block="Asr_NUM_Cleck"
     //% weight=91
     //% blockGap=10
-    //% color="#006400"
+    //% color="#3CB371"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Asr_NUM_Cleck(): number {
 
@@ -275,7 +275,7 @@ namespace Asr_V3 {
     //% blockId=Cleck_Asr_Num block="Cleck_Asr_Num|asr_num %asr_num"
     //% weight=91
     //% blockGap=10
-    //% color="#006400"
+    //% color="#3CB371"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Cleck_Asr_Num(asr_num: number): void { 
         
@@ -290,7 +290,7 @@ namespace Asr_V3 {
     //% blockId=Read_Firmware_Version block="Read_Firmware_Version"
     //% weight=90
     //% blockGap=10
-    //% color="#006400"
+    //% color="#3CB371"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Read_Firmware_Version(): number {
 
@@ -306,7 +306,7 @@ namespace Asr_V3 {
     //% blockId=Asr_Busy_Date block="Asr_Busy_Date"
     //% weight=89
     //% blockGap=10
-    //% color="#006400"
+    //% color="#3CB371"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Asr_Busy_Date(): number {
 
@@ -322,7 +322,7 @@ namespace Asr_V3 {
     //% blockId=Wait_Asr_Busy block="Wait_Asr_Busy"
     //% weight=88
     //% blockGap=10
-    //% color="#006400"
+    //% color="#3CB371"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Wait_Asr_Busy(): void { 
         
