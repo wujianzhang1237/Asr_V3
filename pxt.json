@@ -1,11 +1,12 @@
 {
     "name": "Asr_V3",
     "version": "1.0.1",
-    "description": "Extension for YahBoom ASR_V3 V1.0.1",
+    "description": "Extension for YahBoom Asr_V3 V1.0.1",
     "license": "MIT",
     "dependencies": {
         "core": "*"
 	
+
     },
     "files": [
         "README.md",

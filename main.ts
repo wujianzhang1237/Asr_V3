@@ -1,12 +1,13 @@
-﻿/*
+/*
 Copyright (C): 2010-2022, Shenzhen Yahboom Tech
 modified from wujianzhang
 load dependency
-"Asr": "file:../pxt-Asr"
+"Asr": "file:../pxt-Asr_V3"
 */
 
 //% color="#006400" weight=20 icon="\uf130"
-namespace Asr {
+namespace Asr_V3 {
+    
     const I2C_ADDR = 0x0f                   //语音识别模块地址
     const ASR_ADD_WORD_ADDR = 0x01          //词条添加地址
     const ASR_MODE_ADDR = 0x02              //识别模式设置地址，值为0-2，0:循环识别模式 1:口令模式 ,2:按键模式，默认为循环检测
