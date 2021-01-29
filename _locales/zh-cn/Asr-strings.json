@@ -1,0 +1,32 @@
+{
+  "Asr_V3.Asr_Add_Words|block": "添加识别词组|词组序号 %value|词组拼音 %str",
+  "Asr_V3.Asr_Clear_Buffer|block": "清除掉电缓存区",
+  "Asr_V3.Asr_Set_RGB|block": "模块RGB灯|红色 %value1|绿色 %value2|蓝色 %value3",
+  "Asr_V3.Asr_Set_RGB2|block": "模块RGB灯|选择RGB灯颜色 %value",  
+  "Asr_V3.Asr_Set_Mode|block": "设置模式为|模式 %mode_num",
+  "Asr_V3.Asr_Gain|block": "设置灵敏度为|数值 %gain",
+  "Asr_V3.Asr_Voice|block": "识别提示声开关设置|数值 %voice",
+  "Asr_V3.Asr_Buzzer|block": "蜂鸣器设置|为 %buzzer_state",    
+  "Asr_V3.Asr_Key_ON|block": "按键按下",
+  "Asr_V3.Asr_Result|block": "识别结果",
+  "Asr_V3.Asr_NUM_Cleck|block": "模块录入词组数",  
+  "Asr_V3.Cleck_Asr_Num|block": "检验模块录入词组数|词组数为 %asr_num",
+  "Asr_V3.Read_Firmware_Version|block": "读取固件版本",
+  
+  "Asr_V3.Mode.cycle_mode|block": "循环模式",
+  "Asr_V3.Mode.password_mode|block": "口令模式",
+  "Asr_V3.Mode.key_mode|block": "按键模式",
+  "Asr_V3.Voice_State.OFF|block": "关",
+  "Asr_V3.Voice_State.ON|block": "开",
+  "Asr_V3.Buzzer_State.OFF|block": "关",
+  "Asr_V3.Buzzer_State.ON|block": "开",  
+  
+  "Asr_V3.enColor.OFF|block": "灭",
+  "Asr_V3.enColor.Red|block": "红色",
+  "Asr_V3.enColor.Green|block": "绿色",
+  "Asr_V3.enColor.Blue|block": "蓝色",
+  "Asr_V3.enColor.White|block": "白色",
+  "Asr_V3.enColor.Cyan|block": "青色",
+  "Asr_V3.enColor.Pinkish|block": "品红",
+  "Asr_V3.enColor.Yellow|block": "黄色"
+}
