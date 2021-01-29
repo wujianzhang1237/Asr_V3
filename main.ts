@@ -327,7 +327,7 @@ namespace Asr_V3 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Wait_Asr_Busy(): void { 
         
-        while(Asr_Busy() !=  0)
+        while(Asr_Busy_Date() !=  0)
         {
             basic.pause(100);
         }
