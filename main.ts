@@ -118,7 +118,6 @@ namespace Asr_V3 {
         
         pins.i2cWriteBuffer(I2C_ADDR, buf);
 
-        basic.pause(12000);//必须足够的延时用于擦除
     }
 
     //% blockId=Asr_Asr_Set_RGB block="Asr_Set_RGB|value1 %value1|value2 %value2|value3 %value3"
